@@ -1,5 +1,6 @@
 import sympy as sp
 
+
 def newtons_method(f: sp.Expr, x: sp.Symbol, x0, max_error):
     """Newton's method for finding roots of a function.
 
@@ -23,10 +24,12 @@ def newtons_method(f: sp.Expr, x: sp.Symbol, x0, max_error):
 
         fpx = f_prime.subs(x, x_value)
         if fpx == 0:
-            raise ValueError("Divide by zero error. Newton's method cannot proceed.")
+            raise ValueError(
+                "Divide by zero error. Newton's method cannot proceed.")
 
         x_value = x_value - fx / fpx
         steps += 1
+
 
 # Define the function
 x = sp.Symbol('x')

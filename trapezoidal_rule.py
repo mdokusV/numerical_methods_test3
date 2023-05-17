@@ -25,6 +25,7 @@ def trapezoidal_rule(f, a, b, h):
 def f(x):
     return x**2
 
+
 a = 0  # lower limit of integration
 b = 1  # upper limit of integration
 h = 0.2  # step size

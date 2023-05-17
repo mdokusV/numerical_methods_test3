@@ -22,7 +22,7 @@ def composite_simpsons_1_3(f, a, b, h):
     integral = y[0] + y[n]
     for i in range(1, n, 2):
         integral += 4 * y[i]
-    for i in range(2, n-1, 2):
+    for i in range(2, n - 1, 2):
         integral += 2 * y[i]
 
     integral *= h / 3
@@ -32,10 +32,10 @@ def composite_simpsons_1_3(f, a, b, h):
 def f(x):
     return pow(x, 4) + 1
 
+
 a = 0  # lower limit of integration
 b = 1  # upper limit of integration
-h = 1/8  # step size
+h = 1 / 8  # step size
 
 approximation = composite_simpsons_1_3(f, a, b, h)
 print("Approximation:", approximation)
-

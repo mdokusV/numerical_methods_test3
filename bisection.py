@@ -11,10 +11,12 @@ def bisection_method(f, a, b, max_error):
         tuple: A tuple containing the root value and the number of steps taken.
     """
     if f(a) * f(b) >= 0:
-        raise ValueError("The function values at the interval endpoints must have opposite signs.")
+        raise ValueError(
+            "The function values at the interval endpoints must have opposite signs."
+        )
 
     steps = 0
-    while abs(b - a)/2 >= max_error:
+    while abs(b - a) / 2 >= max_error:
         c = (a + b) / 2
         if f(c) == 0:
             return c, steps
@@ -28,7 +30,9 @@ def bisection_method(f, a, b, max_error):
     value = f(root)
     return root, value, steps
 
+
 import math
+
 
 def bisection_steps(a, b, error):
     """Estimates the number of steps required for the Bisection method.
@@ -44,14 +48,13 @@ def bisection_steps(a, b, error):
     return math.ceil(math.log((b - a) / error) / math.log(2)) - 1
 
 
-
-
 def f(x):
-    return x**2 - 2 
+    return x**2 - 2
+
 
 a = 1  # lower limit of the interval
 b = 2  # upper limit of the interval
-max_error = 0.0001  # maximum error allowed
+max_error = 1e-6  # maximum error allowed
 
 root, value, steps = bisection_method(f, a, b, max_error)
 print("Root:", root)
@@ -60,4 +63,3 @@ print("Value:", value)
 
 steps = bisection_steps(a, b, max_error)
 print("Formula number of steps:", steps)
-

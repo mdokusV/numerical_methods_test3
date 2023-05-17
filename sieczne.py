@@ -1,6 +1,8 @@
 import sympy as sp
 
-def secant_method(f: sp.Expr, x: sp.Symbol, x0: float, x1: float, max_error: float):
+
+def secant_method(f: sp.Expr, x: sp.Symbol, x0: float, x1: float,
+                  max_error: float):
     """Secant method for finding roots of a function.
 
     Args:
